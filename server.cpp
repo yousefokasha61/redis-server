@@ -18,7 +18,7 @@ static void die(const char *msg) {
 
 static void do_something(int connFd) {
     char rBuf[64];
-    ssize_t n = read(connFd, rBuf, sizeof(rBuf));
+    ssize_t n = read(connFd, rBuf, sizeof(rBuf) - 1);
 
     if (n < 0) {
         msg("read() error");
